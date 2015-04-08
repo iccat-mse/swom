@@ -1,0 +1,47 @@
+---
+title: "Mediterranean Swordfish OM"
+author: "Laurence Kell"
+date: "26/03/2015"
+output: html_document
+---
+
+```{r, echo=FALSE}
+library(knitr)
+
+opts_chunk$set(comment=NA, 
+               fig.width =5.5, 
+               fig.height=6,
+               fig.path  ="../tex/",
+               warning=FALSE, 
+               message=FALSE, 
+               error  =FALSE, 
+               echo   =FALSE, 
+               eval   =TRUE,
+               cache  =TRUE)
+```
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(plyr)
+library(reshape2)
+library(FLCore)
+library(FLBRP)
+library(ggplotFL)
+library(mixdist)
+library(ALKr)
+library(FLsz)
+library(FLXSA)
+library(FLash)
+
+## Data and parameters
+dirMy ="/home/laurie/MEGAsync/mse/trade-offs"
+dirDat=paste(dirMy,"/data",  sep="")
+dirInp=paste(dirMy,"/inputs",sep="")
+
+theme_set(theme_bw(base_size=10))
+```
+
+```{r, echo=FALSE}
+load(past(dirDat,"brp.RData",sep="/"))
+load(past(dirDat,"swom.RData",sep="/"))
+```
